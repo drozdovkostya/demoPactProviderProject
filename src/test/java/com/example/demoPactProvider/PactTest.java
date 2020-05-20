@@ -14,13 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.web.server.LocalServerPort;
 
-import java.util.Date;
-import java.util.Map;
-import java.util.UUID;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-
 @Provider("test_provider")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 //pact_broker is the service name in docker-compose
@@ -47,8 +40,7 @@ public class PactTest {
     private UserService userService;
 
     @State("default")
-    public void toDefaultState(Map<String, Object> params) {
-
+    public void toDefaultState() {
 
     }
 }
