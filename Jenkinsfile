@@ -20,7 +20,7 @@ pipeline {
       }
       stage('Run contract test') {
           steps{
-              sh "mvn test-compile pact:verify -Dpact.verifier.publishResults=true -DpactBrokerUrl=http://pact-broker -Drevision=$GIT_COMMIT"
+              sh "mvn verify -Dpact.verifier.publishResults=true -DpactBrokerUrl=pact-broker -Dpact.provider.version=$GIT_COMMIT"
             }
       }
       stage('Deploy to TST') {
