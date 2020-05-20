@@ -23,25 +23,25 @@ pipeline {
               sh "mvn verify -Dpact.verifier.publishResults=true -DpactBrokerUrl=pact-broker -Dpact.provider.version=$GIT_COMMIT"
             }
       }
-      stage('Deploy to TST') {
-          steps{
-              sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_provider/versions/$GIT_COMMIT/tags/tst' --header 'Content-Type: application/json'"
-            }
-      }
+//       stage('Deploy to TST') {
+//           steps{
+//               sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_provider/versions/$GIT_COMMIT/tags/tst' --header 'Content-Type: application/json'"
+//             }
+//       }
 
 
-      stage('Deploy to ACC') {
-          steps{
-              sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_provider/versions/$GIT_COMMIT/tags/acc' --header 'Content-Type: application/json'"
-            }
-      }
+//       stage('Deploy to ACC') {
+//           steps{
+//               sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_provider/versions/$GIT_COMMIT/tags/acc' --header 'Content-Type: application/json'"
+//             }
+//       }
 
 
-      stage('Deploy to PRD') {
-          steps{
-              sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_provider/versions/$GIT_COMMIT/tags/prd' --header 'Content-Type: application/json'"
-            }
-      }
+//       stage('Deploy to PRD') {
+//           steps{
+//               sh "curl --location --request PUT 'http://pact-broker/pacticipants/test_provider/versions/$GIT_COMMIT/tags/prd' --header 'Content-Type: application/json'"
+//             }
+//       }
    }
 
    }
