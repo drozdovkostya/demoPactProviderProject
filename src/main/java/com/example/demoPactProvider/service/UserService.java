@@ -11,6 +11,7 @@ public class UserService {
         user.setLastName("Johnson");
         user.setPosition("Admin");
         user.setPostalCode("1111");
+        user.setId(87);
         return user;
     }
 }
