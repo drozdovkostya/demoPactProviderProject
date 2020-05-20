@@ -24,7 +24,7 @@ import static org.mockito.Mockito.when;
 @Provider("test_provider")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 //pact_broker is the service name in docker-compose
-@PactBroker(host = "localhost", port = "80")
+@PactBroker(host = "pact-broker", port = "80")
 public class PactTest {
     @LocalServerPort
     private int port;
@@ -48,12 +48,7 @@ public class PactTest {
 
     @State("default")
     public void toDefaultState(Map<String, Object> params) {
-//        when(userService.randomUser(any())).thenReturn(User.builder()
-//                .id("1")
-//                .legacyId(UUID.randomUUID().toString())
-//                .name("Beth")
-//                .lastLogin(new Date())
-//                .build());
+
 
     }
 }
