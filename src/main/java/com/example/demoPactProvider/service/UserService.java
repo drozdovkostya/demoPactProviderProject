@@ -7,7 +7,7 @@ public class UserService {
 
         User user = new User();
         user.setAge(12);
-        user.setFirstName(firstName);
+        user.setFirstName("Arnold");
         user.setLastName("Johnson");
         user.setPosition("Admin");
         user.setPostalCode("1111");
